@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
  
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect root to login or another default path
   { path: 'user', component: RegistrationComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
 ];
   
 
