@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule,provideHttpClient, withFetch } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -25,7 +25,7 @@ import { RegistrationComponent } from './registration/registration.component';
     HttpClient
     
   ],
-  providers: [AuthService],
+  providers: [AuthService,   provideHttpClient(withFetch())],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

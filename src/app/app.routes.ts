@@ -4,6 +4,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 
 
+
  export const routes: Routes = [
  
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect root to login or another default path

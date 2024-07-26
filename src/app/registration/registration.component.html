@@ -1,5 +1,13 @@
-<div class="container col-md-6">
-    <h1 style="color: red;">User Login</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container col-md-6">
+    <h1 style="color: red;">User Registration</h1>
     <form action="" class="col-5" >
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
@@ -10,5 +18,9 @@
             <input type="password"[(ngModel)]="password" class="form-control" id="password" name="password">
           </div>
           <button type="submit" class=" btn btn-primary" (click)="register()"> Submit</button>
+         <p>Already have an account <a routerLink="/login">login</a></p>
+        <router-outlet></router-outlet>
     </form>
 </div>
+</body>
+</html>

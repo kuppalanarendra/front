@@ -1,22 +1,25 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-registration',
   standalone: true,
-  imports: [CommonModule,FormsModule,HttpClientModule],
+  imports: [CommonModule,FormsModule,HttpClientModule,RouterModule],
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.css'],
+  providers:[AuthService]
 })
 export class RegistrationComponent {
+ 
   username:string="";
   password:string="";
 
-  constructor(private authService:AuthService){
+  constructor(private authService:AuthService,http:HttpClient){
 
   }
   register() {

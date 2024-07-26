@@ -14,17 +14,23 @@ export class AuthService {
 
   constructor(private http:HttpClient){}
 
-  login(username:string,password:string){
-      return this.http.post(`${this.baseUrl}/authenticate`, { username, password });
+   login(username:string,password:string){
+    console.log("Auth called")
+     return  this.http.post<string>(`${this.baseUrl}/authenticate`, { username, password },{ responseType: 'text' as 'json' });
 
   }
   register(username: string, password: string): Observable<any> {
+    console.log(username)
       return this.http.post(`${this.baseUrl}/register`, { username, password });
     }
 
-    // saveToken(token: string) {
-    //   localStorage.setItem('jwtToken', token);
-    // }
+    saveToken(token: string) {
+      console.log("save called");
+      localStorage.setItem('jwtToken', token);
+    }
+    getToken(): string | null {
+      return localStorage.getItem('jwtToken');
+    }
   
     
 
